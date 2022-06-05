@@ -1,10 +1,10 @@
 import { npmPackagr } from "npm-packagr";
 import {
     badge,
+    BadgeType,
     git,
     npx,
     packageJSON,
-    Pipeline,
     publish,
     test,
     version,
@@ -18,6 +18,8 @@ npmPackagr({
 
         test(),
 
+        badge(BadgeType.Test),
+
         version("patch", {
             commitHooks: false,
             gitTagVersion: false,
@@ -30,12 +32,7 @@ npmPackagr({
             packageJson.main = "main.js";
         }),
 
-        badge("tests", {
-            label: "tests",
-            message: "passing",
-        }),
-
-        badgeLicense(),
+        badge(BadgeType.License),
 
         git("commit", "tags-factory"),
         git("push"),
@@ -45,13 +42,3 @@ npmPackagr({
         }),
     ],
 });
-
-function badgeLicense(): Pipeline {
-    const { license } = require("./package/package");
-
-    return badge("license", {
-        label: "license",
-        message: String(license),
-        messageColor: "green",
-    });
-}
