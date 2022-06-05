@@ -1,0 +1,31 @@
+{
+    "name": "tags-factory",
+    "version": "0.7.2",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PavelDymkov/tags-factory.git"
+    },
+    "author": {
+        "name": "Pavel Dymkov",
+        "email": "dymkov86@gmail.com"
+    },
+    "license": "ISC",
+    "keywords": [],
+    "bugs": {
+        "url": "https://github.com/PavelDymkov/tags-factory/issues"
+    },
+    "homepage": "https://github.com/PavelDymkov/tags-factory#readme",
+    "scripts": {
+        "pub": "packagr",
+        "pretest": "tsc -p test-src/tsconfig.json",
+        "test": "jest --rootDir test"
+    },
+    "devDependencies": {
+        "@types/jest": "^28.1.0",
+        "jest": "^28.1.0",
+        "npm-packagr": "^1.0.39",
+        "prettier": "^2.6.2",
+        "typescript": "^4.7.2"
+    }
+}
