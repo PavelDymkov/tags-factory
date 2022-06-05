@@ -12,6 +12,8 @@ import {
 
 npmPackagr({
     pipelines: [
+        git("commit", "tags-factory"),
+
         npx("tsc"),
 
         packageJSON((packageJson) => {
