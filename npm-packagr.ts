@@ -16,6 +16,13 @@ npmPackagr({
 
         npx("tsc"),
 
+        test(),
+
+        version("patch", {
+            commitHooks: false,
+            gitTagVersion: false,
+        }),
+
         packageJSON((packageJson) => {
             delete packageJson.devDependencies;
             delete packageJson.scripts;
@@ -23,16 +30,9 @@ npmPackagr({
             packageJson.main = "main.js";
         }),
 
-        test(),
-
         badge("tests", {
             label: "tests",
             message: "passing",
-        }),
-
-        version("patch", {
-            commitHooks: false,
-            gitTagVersion: false,
         }),
 
         badgeLicense(),
