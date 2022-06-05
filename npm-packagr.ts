@@ -1,5 +1,6 @@
 import { npmPackagr } from "npm-packagr";
 import {
+    assets,
     badge,
     BadgeType,
     git,
@@ -33,6 +34,8 @@ npmPackagr({
         }),
 
         badge(BadgeType.License),
+
+        assets("README.md"),
 
         git("commit", "tags-factory"),
         git("push"),
